@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="{{ craft.locale }}">
+	<head>
+        {#
+            Dit moet het pad zijn naar de pagina. Is de angular app op bijv /subpagina dan moet dit in de base href staan
+        #}
+        {% if useScripts is defined and 'angular' in useScripts %}
+            <base href="{{ siteUrl }}">
+        {% endif %}
+	</head>
+
+	<body>
+        {#
+            Pagina
+        #}
+
+        {% if useScripts is defined and 'angular' in useScripts %}
+            <script type="text/javascript" src="{{ submap }}resources/scripts/angular/inline.js"></script>
+            <script type="text/javascript" src="{{ submap }}resources/scripts/angular/main.bundle.js"></script>
+        {% endif %}
+	</body>
+</html>
