@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('production', [
-		'exec:prod'
+		'exec:prod',
+        'exec:rename_bundle'
 	]);
 };
