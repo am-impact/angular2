@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { PATH } from './config';
 
 @Component({
     selector: 'app-root',
-    templateUrl: `${PATH.templates}app`,
+    templateUrl: './app-component.html',
     interpolation: ["[[", "]]"]
 })
 export class AppComponent {
