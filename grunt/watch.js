@@ -1,6 +1,6 @@
 module.exports = {
     angular: {
-        files: ['src/angular/**/*.ts'],
+        files: ['src/angular/**/*.ts','src/angular/**/*.html'],
         tasks: [
             'exec:dev'
         ],
