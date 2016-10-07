@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PATTERN } from './../config';
 
 @Component({
     selector: 'app-formexample',
@@ -18,7 +19,11 @@ export class FormexampleComponent implements OnInit {
 
             // Bij meerdere validators moet je deze stoppen in een compose functie
             'yourName': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
-            'email' : '',
+            'email' : ['', Validators.compose([
+                    Validators.required,
+                    Validators.pattern( PATTERN.email )
+                ])
+            ],
             'telephone' : ''
         });
     }

@@ -9,6 +9,16 @@
                 <label class="validation_field_message" *ngIf="!formulierNaam.controls['companyName'].valid && formulierNaam.controls['companyName'].touched">This field is required</label>
             </div>
         </li>
+        <li class="form__row">
+                <div class="form__label">
+                    <label for="frm-emailaddress" class="required">Your emailaddress</label>
+                </div>
+                <div class="form__field">
+                    <input type="email" id="frm-emailaddress" [formControl]="personalInformationForm.controls['email']">
+                    <label class="validation_field_message" *ngIf="personalInformationForm.controls['email'].hasError('required') && personalInformationForm.controls['email'].touched">This field is required</label>
+                    <label class="validation_field_message" *ngIf="personalInformationForm.controls['email'].hasError('pattern') && personalInformationForm.controls['email'].touched">Please fill in a valid emailaddress</label>
+                </div>
+            </li>
     </ul>
 
     <div class="buttons">
