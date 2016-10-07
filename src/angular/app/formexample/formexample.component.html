@@ -1,0 +1,17 @@
+<form [formGroup]="formulierNaam" (ngSubmit)="onSubmit( formulierNaam )">
+    <ul>
+        <li class="form__row">
+            <div class="form__label">
+                <label for="frm-company" class="required">Company name</label>
+            </div>
+            <div class="form__field">
+                <input type="text" id="frm-company" [formControl]="formulierNaam.controls['companyName']">
+                <label class="validation_field_message" *ngIf="!formulierNaam.controls['companyName'].valid && formulierNaam.controls['companyName'].touched">This field is required</label>
+            </div>
+        </li>
+    </ul>
+
+    <div class="buttons">
+         <button type="submit" class="button" [disabled]="!formulierNaam.valid">Verzenden</button>
+    </div>
+</form>
